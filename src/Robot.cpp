@@ -104,7 +104,7 @@ void Robot::TeleopPeriodic() {
 		prevTrigger = Robot::oi->getTransJoystick()->GetRawButton(1);
 		if(Robot::oi->getTransJoystick()->GetRawButton(1))
 		{//Crab
-			Robot::driveTrain->Crab(Robot::oi->getJoystickTwist(),-Robot::oi->getJoystickY(),Robot::oi->getJoystickX(),true);
+			//Robot::driveTrain->Crab(Robot::oi->getJoystickTwist(),-Robot::oi->getJoystickY(),Robot::oi->getJoystickX(),true);
 		}
 		else
 		{//Steering

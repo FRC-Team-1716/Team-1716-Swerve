@@ -23,7 +23,7 @@ class DriveTrain: public Subsystem {
 private:
 	// It's desirable that everything possible under private except
 	// for methods that implement subsystem capabilities
-	static const double pi=3.14159;
+	const double pi=3.14159;
 
 	float gyroreference;
 

@@ -35,7 +35,7 @@ public:
 	double RLOffset;
 	double RROffset;
 	RAWCConstants* File;
-	bool complete;
+	//bool complete;
 };
 
 #endif

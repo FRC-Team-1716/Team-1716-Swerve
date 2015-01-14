@@ -85,6 +85,7 @@ double OI::getScaledJoystickRadians() {
 	}
 	return scaledRadians;
 }
+
 double OI::getJoystickMagnitude() {
 	if(getTransJoystick()->GetMagnitude() < .1)
 		return 0;
