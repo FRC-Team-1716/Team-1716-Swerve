@@ -407,7 +407,7 @@ bool DriveTrain::ZeroGyro(float InitTime)  //performs gyro calibration
 	}
 	else
 	{
-		if(GetClock() > GyroZeroTime + InitTime)
+		if((GetClock() > GyroZeroTime + InitTime) and not Done)
 		{
 //			gyro->InitGyro();
 			GyroZeroFlag = false;
