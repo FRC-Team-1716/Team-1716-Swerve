@@ -39,10 +39,10 @@ void Robot::RobotInit() {
 	RROffset = File->getValueForKey("RROff");
 	Robot::driveTrain->SetOffsets(FLOffset, FROffset, RLOffset, RROffset);
 
-	Robot::driveTrain->frontLeftPos->SetAverageBits(256);
-	Robot::driveTrain->frontRightPos->SetAverageBits(256);
-	Robot::driveTrain->rearLeftPos->SetAverageBits(256);
-	Robot::driveTrain->rearRightPos->SetAverageBits(256);
+	//Robot::driveTrain->frontLeftPos->SetAverageBits(256);
+	//Robot::driveTrain->frontRightPos->SetAverageBits(256);
+	//Robot::driveTrain->rearLeftPos->SetAverageBits(256);
+	//Robot::driveTrain->rearRightPos->SetAverageBits(256);
 
 	Robot::driveTrain->frontLeft->Enable();
 	Robot::driveTrain->frontRight->Enable();
@@ -127,15 +127,15 @@ void Robot::SMDB() {
 	//SmartDashboard::PutNumber("ScalingFactor",Robot::oi->getRotatJoystick()->GetTwist()/2+1.5);
 	SmartDashboard::PutNumber("ScalingFactor",Robot::oi->getRotatJoystick()->GetY()/2+1.5);
 	//Wheel Module Voltages
-	SmartDashboard::PutNumber("FrontLeftVol",Robot::driveTrain->frontLeftPos->GetAverageVoltage());
-	SmartDashboard::PutNumber("FrontRightVol",Robot::driveTrain->frontRightPos->GetAverageVoltage());
-	SmartDashboard::PutNumber("RearLeftVol",Robot::driveTrain->rearLeftPos->GetAverageVoltage());
-	SmartDashboard::PutNumber("RearRightVol",Robot::driveTrain->rearRightPos->GetAverageVoltage());
+	SmartDashboard::PutNumber("FrontLeftVol",Robot::driveTrain->frontLeftPos->GetDistance());
+	SmartDashboard::PutNumber("FrontRightVol",Robot::driveTrain->frontRightPos->GetDistance());
+	SmartDashboard::PutNumber("RearLeftVol",Robot::driveTrain->rearLeftPos->GetDistance());
+	SmartDashboard::PutNumber("RearRightVol",Robot::driveTrain->rearRightPos->GetDistance());
 	//Wheel Module Values
-	SmartDashboard::PutNumber("FrontLeftValue",Robot::driveTrain->frontLeftPos->GetAverageValue());
-	SmartDashboard::PutNumber("FrontRightValue",Robot::driveTrain->frontRightPos->GetAverageValue());
-	SmartDashboard::PutNumber("RearLeftValue",Robot::driveTrain->rearLeftPos->GetAverageValue());
-	SmartDashboard::PutNumber("RearRightValue",Robot::driveTrain->rearRightPos->GetAverageValue());
+	SmartDashboard::PutNumber("FrontLeftValue",Robot::driveTrain->frontLeftPos->Get());
+	SmartDashboard::PutNumber("FrontRightValue",Robot::driveTrain->frontRightPos->Get());
+	SmartDashboard::PutNumber("RearLeftValue",Robot::driveTrain->rearLeftPos->Get());
+	SmartDashboard::PutNumber("RearRightValue",Robot::driveTrain->rearRightPos->Get());
 
 	//Wheel Module Errors
 	SmartDashboard::PutNumber("FLError", Robot::driveTrain->frontLeft->GetError());
