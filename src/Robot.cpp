@@ -99,9 +99,9 @@ void Robot::TeleopPeriodic() {
 		SMDB();
 
 	//Resets gyro to zero when crab starts
-		if (!prevTrigger && Robot::oi->getTransJoystick()->GetRawButton(1))
-			Robot::driveTrain->gyro->Reset();
-		prevTrigger = Robot::oi->getTransJoystick()->GetRawButton(1);
+		//if (!prevTrigger && Robot::oi->getTransJoystick()->GetRawButton(1))
+		//	Robot::driveTrain->gyro->Reset();
+		//prevTrigger = Robot::oi->getTransJoystick()->GetRawButton(1);
 		if(Robot::oi->getTransJoystick()->GetRawButton(1))
 		{//Crab
 			//Robot::driveTrain->Crab(Robot::oi->getJoystickTwist(),-Robot::oi->getJoystickY(),Robot::oi->getJoystickX(),true);
@@ -122,7 +122,7 @@ void Robot::SMDB() {
 	SmartDashboard::PutNumber("StickDirection",Robot::oi->getTransJoystick()->GetDirectionRadians());
 	//SmartDashboard::PutNumber("StickTwist",Robot::oi->getRotatJoystick()->GetTwist());
 	SmartDashboard::PutNumber("StickTwist",Robot::oi->getRotatJoystick()->GetY());
-	SmartDashboard::PutNumber("GyroAngle", Robot::driveTrain->gyro->GetAngle());
+	//SmartDashboard::PutNumber("GyroAngle", Robot::driveTrain->gyro->GetAngle());
 	SmartDashboard::PutNumber("ScaledRadians",Robot::oi->getScaledJoystickRadians());
 	//SmartDashboard::PutNumber("ScalingFactor",Robot::oi->getRotatJoystick()->GetTwist()/2+1.5);
 	SmartDashboard::PutNumber("ScalingFactor",Robot::oi->getRotatJoystick()->GetY()/2+1.5);
